@@ -1,6 +1,6 @@
 def myYaml=""
 node('build-node') {
-   myYaml = readYaml file: "/config/myYamlFile.yaml"
+   myYaml = readYaml file: "config/myYamlFile.yaml"
 }
 
 
