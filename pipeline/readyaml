@@ -3,7 +3,7 @@ node('build-node') {
   checkout scm
   sh "pwd"
   sh "ls -la"
-  sh "/s -la ./config"
+  sh "ls -la ./config"
    myYaml = readYaml file: "./config/myYamlFile.yaml"
 }
 
