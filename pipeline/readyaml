@@ -1,4 +1,4 @@
-def myYaml = readYaml file: "config/myYamlFile.yaml"
+def myYaml = readYaml file: "/config/myYamlFile.yaml"
 pipeline {
    agent {label 'build-node'}
    stages {
