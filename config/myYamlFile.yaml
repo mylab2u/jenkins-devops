@@ -1,0 +1,7 @@
+cicd:
+  src: "src-test"
+  env: 'env-test"
+sec:
+  sonarqube: true
+  trivy: true
+ 
