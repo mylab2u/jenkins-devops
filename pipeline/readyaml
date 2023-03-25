@@ -1,5 +1,6 @@
 def myYaml=""
 node('build-node') {
+  checkout scm
   sh "pwd"
   sh "ls -la"
   sh "/s -la ./config"
