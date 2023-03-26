@@ -5,7 +5,7 @@ param:
     language: dotnet
   cicd:
     sourcecode:
-      url: https://HLTC-ITAPP06/root/m-sa-core-api.git
+      url: https://xxxx/yyyy.git
       cred: GITLAB_CREDS
       branch:
         dev: dev
@@ -18,10 +18,10 @@ param:
         sonarqube: true
         checkmarx:  true
   artifact:
-    url: https://hltc-itoth03:8443
+    url: https://ccc3:8443
     repo:
-      dev: non-prod-m-sa
-      sit: prod-m-sa
+      dev: xx
+      sit: yy
     cred: NEXUS_CREDS
   sonarqube:
-    url: "https://10.119.68.130"
+    url: "https://192.168.22.22"
