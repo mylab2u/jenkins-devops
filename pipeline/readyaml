@@ -6,6 +6,7 @@ node('build-node') {
   sh "ls -la ./config"
   myYaml = readYaml file: "./config/myYamlFile.yaml"
   nodevar = "test"
+  def nodevar2 = "test222"
 }
 
 
@@ -18,6 +19,7 @@ pipeline {
                echo "Value of key1 is ${myYaml.param.general.project}"
                echo "Value of key2 is ${myYaml.param.cicd.sourcecode.url}"
                echo "Value of nodevar is ${nodevar}"
+               echo "Value of nodevar2 is ${nodevar2}"
             }
          }
       }
