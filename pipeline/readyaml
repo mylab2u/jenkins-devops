@@ -1,5 +1,5 @@
 node('build-node') {
-  cleanws()
+  step([$class: 'WsCleanup'])
   checkout scm
   sh "pwd"
   sh "ls -la"
