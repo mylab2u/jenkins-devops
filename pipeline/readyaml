@@ -7,8 +7,8 @@ pipeline {
       stage('Read YAML') {
          steps {
             script {
-               def myScript = load './vars1/example.groovy'
-               myScript.myMethod('parameter1')
+               def myScript = load ('./vars/example.groovy');
+               myScript.myMethod('parameter1');
             }
          }
       }
