@@ -1,7 +1,27 @@
-cicd:
-  src: "src-test"
-  env: 'env-test"
-sec:
-  sonarqube: true
-  trivy: true
- 
+param:
+  general:
+    project: m-sa
+    service: m-sa-core-api
+    language: dotnet
+  cicd:
+    sourcecode:
+      url: https://HLTC-ITAPP06/root/m-sa-core-api.git
+      cred: GITLAB_CREDS
+      branch:
+        dev: dev
+        sit: master
+    stage_enable:
+      dev:
+        sonarqube: false
+        checkmarx:  false
+      sit:
+        sonarqube: true
+        checkmarx:  true
+  artifact:
+    url: https://hltc-itoth03:8443
+    repo:
+      dev: non-prod-m-sa
+      sit: prod-m-sa
+    cred: NEXUS_CREDS
+  sonarqube:
+    url: "https://10.119.68.130"
