@@ -1,15 +1,4 @@
-node('build-node') {
-  step([$class: 'WsCleanup'])
-  checkout scm
-  sh "pwd"
-  sh "ls -la"
-  sh "ls -la ./config"
-  myYaml = readYaml file: "./config/myYamlFile.yaml"
-  nodevar = "test"
-  def nodevar2 = "test222"
-}
-
-
+def myYaml = readYaml file: "./config/myYamlFile.yaml"
 pipeline {
    agent {label 'build-node'}
    stages {
@@ -18,8 +7,6 @@ pipeline {
             script {
                echo "Value of key1 is ${myYaml.param.general.project}"
                echo "Value of key2 is ${myYaml.param.cicd.sourcecode.url}"
-               echo "Value of nodevar is ${nodevar}"
-               echo "Value of nodevar2 is ${nodevar2}"
             }
          }
       }
