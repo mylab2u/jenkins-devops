@@ -1,10 +1,7 @@
-//node('build-node') {
-//  myYaml = readYaml file: "./config/myYamlFile.yaml"
-//}
 pipeline {
    agent {label 'build-node'}
    stages {
-      stage('Read YAML') {
+      stage(Load Template') {
          steps {
             script {
                def myScript = load ('./template-groovy/template1.groovy');
