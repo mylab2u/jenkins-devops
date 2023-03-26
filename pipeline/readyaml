@@ -1,4 +1,4 @@
-def myYaml=""
+//def myYaml=""
 node('build-node') {
   checkout scm
   sh "pwd"
