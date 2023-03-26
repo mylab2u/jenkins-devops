@@ -1,4 +1,6 @@
-myYaml = readYaml file: "./config/myYamlFile.yaml"
+node('build-node') {
+  myYaml = readYaml file: "./config/myYamlFile.yaml"
+}
 pipeline {
    agent {label 'build-node'}
    stages {
