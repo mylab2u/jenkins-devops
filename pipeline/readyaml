@@ -14,8 +14,8 @@ pipeline {
       stage('Read YAML') {
          steps {
             script {
-               echo "Value of key1 is ${myYaml.cicd.src}"
-               echo "Value of key2 is ${myYaml.sec.sonarqube}"
+               echo "Value of key1 is ${myYaml.param.general.project}"
+               echo "Value of key2 is ${myYaml.cicd.sourcecode.url}"
             }
          }
       }
