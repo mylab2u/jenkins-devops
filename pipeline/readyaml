@@ -1,9 +1,10 @@
 node('build-node') {
+  cleanws()
   checkout scm
   sh "pwd"
   sh "ls -la"
   sh "ls -la ./config"
-   myYaml = readYaml file: "./config/myYamlFile.yaml"
+  myYaml = readYaml file: "./config/myYamlFile.yaml"
 }
 
 
