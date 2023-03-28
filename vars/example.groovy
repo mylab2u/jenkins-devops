@@ -2,6 +2,6 @@ def myMethod(message=null){
   echo 'Hello - ' + message
 }
 
-def myMethod-g(message=null){
+def myMethod_g(message=null){
   echo 'Hello g - ' + message
 }
