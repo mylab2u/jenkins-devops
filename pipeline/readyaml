@@ -1,5 +1,7 @@
 node('build-node') {
-  cleanWs()
+  //cleanWs()
+  sh "pwd"
+  sh "ls -la"
   myYaml = readYaml file: "./config/myYamlFile.yaml"
 }
 pipeline {
