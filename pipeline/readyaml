@@ -1,5 +1,6 @@
 node('build-node') {
   //cleanWs()
+  checkout scm
   sh "pwd"
   sh "ls -la"
   myYaml = readYaml file: "./config/myYamlFile.yaml"
