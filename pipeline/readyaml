@@ -1,13 +1,17 @@
+node('build-node') {
+  myYaml = readYaml file: "./config/myYamlFile.yaml"
+}
 pipeline {
    agent {label 'build-node'}
    stages {
-      stage(Load Template') {
+      stage('Read YAML') {
          steps {
             script {
-               def myScript = load ('./template-groovy/template1.groovy');
-               myScript.myMethod('parameter1');
+               echo "Value of key1 is ${myYaml.param.general.project}"
+               echo "Value of key2 is ${myYaml.param.cicd.sourcecode.url}"
             }
          }
       }
    }
 }
+
