@@ -1,0 +1,33 @@
+node ('build-node'){
+    // Set up environment variables, check out source code, etc.
+    // This block runs on a Jenkins node and sets up the environment
+
+    // Define the pipeline
+    echo "node"
+}
+pipeline {
+    agent { label 'build-node' }  // The agent block specifies the default node for all stages
+    stages {
+        stage('Build') {
+            agent { label 'build-node' } // This stage runs on a different node
+            steps {
+                // Build the code
+                echo "build"
+            }
+        }
+        stage('Test') {
+            steps {
+                // Test the code
+                echo "test"
+            }
+        }
+        stage('Deploy') {
+            agent { label 'deploy-node' } // This stage runs on a different node
+            steps {
+                // Deploy the code
+                echo "deploy"
+            }
+        }
+    }
+}
+
